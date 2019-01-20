@@ -16,11 +16,11 @@ def dups(L, option: str) -> list:
             else:
                 unique.add(i)
         if option.lower() == 'unique':
-            return unique
+            return list(unique)
         if option.lower() == 'dups':
-            return dups
+            return list(dups)
         if option.lower() == 'both':
-            return unique, dups
+            return list(unique), list(dups)
         else:
             print('Invalid option')
     else:
