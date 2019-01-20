@@ -1,0 +1,27 @@
+def dups(L, option: str) -> list:
+    #function takes a list or string as an input argument
+    #returns a list of values which are duplicates or not
+    #depending on user request
+    #option may be 'unique', 'dups', or 'both'
+    dups = set()
+    unique = set()
+
+    if (type(L) == list) or (type(L) == str):        
+        for i in L:
+            if i in dups:
+                continue
+            if i in unique:
+                unique.remove(i)
+                dups.add(i)
+            else:
+                unique.add(i)
+        if option.lower() == 'unique':
+            return unique
+        if option.lower() == 'dups':
+            return dups
+        if option.lower() == 'both':
+            return unique, dups
+        else:
+            print('Invalid option')
+    else:
+        return None
